@@ -37,7 +37,7 @@ export const DashHead = () => {
               className={`${styles.contentsContainer} ${index === currentIndex ? styles.current : ''}`}
             >
               <div className={styles.content}>
-                  <h5>{content.heading}</h5>
+                  <h2>{content.heading}</h2>
                   <p>{content.subheading}</p>
               </div>
             </div>

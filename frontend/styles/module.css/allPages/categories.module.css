@@ -65,19 +65,19 @@
 
 .containerGrid {
   height: auto !important;
-  margin-top: 5px;
+  margin-top: 10px;
   overflow: hidden;
 }
 .containerGrid .card {
   border-radius: 5px;
   width: 100%;
   float: left;
-  height: 75px !important;
+  height: 65px !important;
   padding: 6px 4px;
   background-color: #ceccc7;
 }
 .containerGrid .card.cart {
-  height: 70px !important;
+  height: 60px !important;
 }
 .containerGrid .card.wishlist {
   height: 40px !important;

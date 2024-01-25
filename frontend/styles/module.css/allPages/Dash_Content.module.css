@@ -20,7 +20,6 @@
 
 .row1 {
   height:95px;
-  margin-top: -15px;
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;

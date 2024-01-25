@@ -2,7 +2,7 @@
 
 #DashHead {
   position: relative;
-  height: 90px;
+  height: 105px;
   width: 100%;
   margin-bottom: 6px;
   overflow: hidden;
@@ -54,8 +54,8 @@
 }
 
 #DashHead .circle {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.096);
   margin-right: 5px;
@@ -70,13 +70,14 @@
   float: left;
   width: 50; /* It seems there's a typo here. It should be width: 50px; */
   margin: 20px !important;
+  margin-top: 30px !important;
   text-align: left !important;
 }
-#DashHead .content h5{
-  margin-top: 10px;
+#DashHead .content h2{
+  margin-top: 12px;
 }
 #DashHead .content p{
-  margin-top: -15px;
+  margin-top: -6px;
 }
 #DashHead .circlesWrapper {
   position: absolute;
