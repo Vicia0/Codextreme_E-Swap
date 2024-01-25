@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Userchema = new mongoose.Schema(
   {
@@ -7,13 +7,13 @@ const Userchema = new mongoose.Schema(
     password:{type:String,required: true,},
     type: {
       type: String, required: true,    
-      enum: ["admin", "buyer", "seller"],
+      enum: ['admin', 'buyer', 'seller'],
     },
     doneOn: { type: Date, default: Date.now, },
   },
   { timestamps: true }
 );
 
-const User = mongoose.models.User || mongoose.model("User", Userchema);
+const User = mongoose.models.User || mongoose.model('User', Userchema);
 
 export default User;
