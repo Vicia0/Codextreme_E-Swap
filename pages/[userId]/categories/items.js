@@ -21,6 +21,13 @@ const ItemsContainer = ({theItemsData, setSelectedItem}) => {
                 <aside>
                     <p>{item.description}</p>
                     <p>{item.amount} rwf</p>
+                    <p onClick={() => console.log('check item status clicked:', item.checkItem)}>
+                        {item.checkItem ? 'Checked' : 'Check item'}
+                    </p>
+                    <p onClick={() => router.push(`/seller/${item.sellerId}`)}>
+                        Dib
+                    </p>
+                    <p>{} Add Wishlist</p>
                 </aside>
             </div>
         )
