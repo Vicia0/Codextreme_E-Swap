@@ -71,4 +71,5 @@
   background-color: var(--pageWrapper_background1) !important;
   height: 100% !important;
   padding: 0 !important;
+  width: 100% !important;
 }

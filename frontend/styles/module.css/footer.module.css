@@ -2,7 +2,6 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-  font-size: 16px;
   transition: all 0.2s ease-in-out 0s;
   align-items: center;
   display: flex;
@@ -14,19 +13,18 @@
 }
 
 #footer_inner i {
-  font-size: 16px;
   color: black;
 }
 
 #footer_inner .menuItem{
-  width: calc(62.5% / 4) !important;
+  width: calc(53% / 4) !important;
   height: 100%;
   float: left;
   align-items: center;
   display: flex;
   text-align: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 #footer_inner .menuItem.active{
   width: 37% !important;
@@ -39,6 +37,7 @@
 }
 #footer_inner .menuItem.active i{
   color: white;
+  font-size: 12px;
 }
 #footer_inner .menuItem.active .icon, #footer_inner .menuItem.active .name{
   height: 34px !important;
@@ -55,7 +54,7 @@
   border-radius: 40px !important;
 }
 #footer_inner .menuItem.active .icon i{
-  font-size: 12px !important;
+  font-size: 11px !important;
 }
 #footer_inner .menuItem.active .name{
   float: left;
@@ -68,5 +67,5 @@
   cursor: pointer;
 }
 #footer_inner .menuItem:hover i{
-  color: white !important;
+  color: var(--header_background) !important;
 }
