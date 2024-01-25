@@ -1,0 +1,85 @@
+/* DashHead.module.css */
+
+#DashHead {
+  position: relative;
+  height: 90px;
+  width: 100%;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+#DashHead .searchHolder {
+  position: absolute;
+  top:4px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  width: 90%;
+  padding: 0% 10px;
+  text-align: left;
+}
+
+#DashHead #searchBar {
+  border: none;
+  outline: none;
+  height: 20px !important;
+  width: 80%;
+  background-color: rgba(236, 236, 236, 0.302);
+  color: grey;
+  float:left;
+}
+
+#DashHead .contentsWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+#DashHead .contentsContainer {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+#DashHead .contentsContainer:nth-child(1){
+  background-color: rgb(128, 89, 89);
+}
+#DashHead .contentsContainer:nth-child(2){
+  background-color: rgb(158, 144, 121);
+}
+#DashHead .contentsContainer:nth-child(3){
+  background-color: rgb(172, 136, 172);
+}
+
+#DashHead .contentsContainer.current {
+  display: block !important;
+}
+
+#DashHead .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.096);
+  margin-right: 5px;
+  display: inline-block;
+}
+
+#DashHead .currentCircle {
+  background-color: rgb(194, 194, 194);
+}
+
+#DashHead .content {
+  float: left;
+  width: 50; /* It seems there's a typo here. It should be width: 50px; */
+  margin: 20px !important;
+  text-align: left !important;
+}
+#DashHead .content h5{
+  margin-top: 10px;
+}
+#DashHead .content p{
+  margin-top: -15px;
+}
+#DashHead .circlesWrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}

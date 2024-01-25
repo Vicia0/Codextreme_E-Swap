@@ -26,6 +26,7 @@
   display: flex;
   gap: 5px;
 }
+
 .row1 .card{
   border-radius: 5px;
   width: 205px;

@@ -2,6 +2,7 @@
 import styles from '../../../styles/module.css/allPages/categories.module.css';
 import React from 'react';
 import Image from 'next/image';
+import PageHeadLayout from '../../../components/pages/pageHead';
 const Nav = ({navData, setCategory, selectedCategory, setSelectedItem}) => {
     const the_items = navData
     const handleNav = (theCategory)=>{
@@ -26,13 +27,15 @@ const Nav = ({navData, setCategory, selectedCategory, setSelectedItem}) => {
         )
     }
     return (
-        <div className={styles.grid1}>
-            {
-                Object.keys(the_items).map(key=>(
-                    returnCard(key, the_items[key])
-                ))
-            }
-        </div>
+        <PageHeadLayout>
+            <div className={styles.CatHeader}>
+                {
+                    Object.keys(the_items).map(key=>(
+                        returnCard(key, the_items[key])
+                    ))
+                }
+            </div>
+        </PageHeadLayout>
     );
 };
 

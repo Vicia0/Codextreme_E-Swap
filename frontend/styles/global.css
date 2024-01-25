@@ -178,3 +178,6 @@ input:focus, select:focus {
 input:-webkit-autofill {
   background-color: transparent !important;
 }
+::-webkit-scrollbar {
+  display: none;
+}

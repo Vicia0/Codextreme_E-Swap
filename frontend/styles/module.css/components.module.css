@@ -1,3 +1,10 @@
+.pageHead {
+  height:auto;
+  width: var(--fullPageWidth);
+  margin-left: -15px;
+  margin-top: -26px;
+  overflow: hidden;
+}
 .logoimg {
   width: 140px;
   height: 60px;
@@ -26,7 +33,7 @@
 }
 
 #PageLayout {
-  width: 97%;
+  width: 100%;
   margin-top: 20px;
 }
 #PageLayout table {

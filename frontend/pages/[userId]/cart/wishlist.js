@@ -26,7 +26,7 @@ const WishList = ({theItemsData, setSelectedItem, allItems}) => {
         )
     }
     return (
-        <div className={styles.grid2}>
+        <div className={styles.containerGrid}>
             {
                 the_items.map((item, index)=>(
                     returnCard(item, index)

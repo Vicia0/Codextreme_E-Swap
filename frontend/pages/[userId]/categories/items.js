@@ -33,7 +33,7 @@ const ItemsContainer = ({theItemsData, setSelectedItem}) => {
         )
     }
     return (
-        <div className={styles.grid2}>
+        <div className={styles.containerGrid}>
             {
                 the_items.map((item, index)=>(
                     returnCard(item, index)
