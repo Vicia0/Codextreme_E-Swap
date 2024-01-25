@@ -11,8 +11,9 @@
   height: var(--fullPageHeight) !important;
   width: var(--fullPageWidth) !important;
   border-radius: 15px !important;
-  border: 2px solid rgb(1, 56, 1);
+  border: 2px solid black;
   overflow: hidden;
+  background-color: var(--pageWrapper_background);
 }
 #App a:hover, #App a:active, #App a:focus {
   text-decoration: none;
@@ -30,10 +31,7 @@
   width: 100% !important;
 }
 #App .theApp .header{
-  background-color: var(--header_background);
-  
-  /* border-bottom: 1.5px solid #c97602; */
-  
+  background-color: var(--header_background);  
 }
 #App .theApp .footer{
   background-color: var(--footer_background);
