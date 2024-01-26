@@ -49,8 +49,8 @@ const ItemsContainer = ({ theItemsData, setSelectedItem, changeSearchPage}) => {
                     className={styles.filterButton}
                     onClick={() => router.push('/filter')} 
                     >
-                    <i className="fa fa-filter" />
-                </button>            
+                    <i id={styles.filterIcon} className="fa fa-filter" />
+                  </button>            
             </div>
         {filteredItems.map((item, index) => (
             returnCard(item, index)
