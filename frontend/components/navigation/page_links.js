@@ -1,4 +1,4 @@
-export const specific_page = (userId_, route, addition)=> `${userId_}${route}/${addition}`
+export const specific_page = (userId_, route, addition) => `${userId_}${route}/${addition}`
 
 export const cartPages = [
   { path: '/cart', name: 'List', linkText: 'Cart List', icon: 'fa fa-car' },
@@ -22,7 +22,7 @@ export const AppPages = [
   { path: '/categories', name: 'Categories', linkText: 'Categories', icon: 'fa fa-list-alt', submenu: categoryPages },
   { path: '/sell', name: 'Sell', linkText: 'Sell', icon: 'fa fa-upload', submenu: purchasePages },
   { path: '/cart', name: 'Cart', linkText: 'Cart', icon: 'fa fa-shopping-cart', submenu: cartPages },
-  { path: '/sellerPages', name: 'My Items', linkText: 'My Items', icon: 'fa fa-user' },
+  { path: '/sellerItems', name: 'My Items', linkText: 'My Items', icon: 'fa fa-user' },
   { path: '/profile', name: 'Profile', linkText: 'My profile', icon: 'fa fa-user' },
 ];
 
@@ -50,7 +50,7 @@ export const FooterPages = {
 };
 
 export const menuPages = {
-  'buyer':[
+  'buyer': [
     { path: '/settings', name: 'Settings', linkText: 'Settings', icon: 'fa fa-cog' },
     { path: '/wishlist', name: 'Wishlist', linkText: 'Wishlist', icon: 'fa fa-cog' },
     { path: '/account', name: 'Account', linkText: 'Account', icon: 'fa fa-cog' },
@@ -59,7 +59,7 @@ export const menuPages = {
     { path: '/logout', name: 'Logout', linkText: 'Logout', icon: 'fa fa-cog' },
     { path: '/help', name: 'Help', linkText: 'Help', icon: 'fa fa-cog' },
   ],
-  'seller':[
+  'seller': [
     { path: '/settings', name: 'Settings', linkText: 'Settings', icon: 'fa fa-cog' },
     { path: '/wishlist', name: 'Wishlist', linkText: 'Wishlist', icon: 'fa fa-cog' },
     { path: '/account', name: 'Account', linkText: 'Account', icon: 'fa fa-cog' },
