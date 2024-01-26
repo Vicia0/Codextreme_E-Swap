@@ -17,20 +17,20 @@ const Cart = ({theItemsData, setSelectedItem, allItems}) => {
         console.log('allItems: ', allItems)
         console.log('matbcing: ', the_item)
         return(
-            <div className={`${styles.card} ${styles.cart}`}key={index} onClick={()=>handleselected(item)}>
-                <article >
-                    <Image src={the_item.image} alt={the_item.name} width={40} height={40}/>
-                </article>
-                <aside>
-                    <p style={{fontWeight:'normal'}}>{the_item.description} </p>
-                    <p style={{fontWeight:'bold'}}>{the_item.amount} rwf</p>
-                    <div>
-                        <p>Buy</p>  
-                        <p>Bid</p>  
-                        <p>Remove</p>  
-                    </div>
-                </aside>
-            </div>
+            <div className={styles.card} key={index} onClick={() => handleselected(item)}>
+            <article>
+              <Image src={item.image} alt={item.name} width={40} height={40} />
+            </article>
+            <aside>
+              <p>{the_item.name}</p>
+              <p>{the_item.amount} rwf</p>
+              <div>
+                <p className={styles.chat}>Bid</p>
+                <p className={styles.shoppingCart}> Buy <i className="fa fa-shopping-cart"></i></p>
+                <p className={styles.wishlist}>Remove </p>
+              </div>
+            </aside>
+          </div>
         )
     }
     return (

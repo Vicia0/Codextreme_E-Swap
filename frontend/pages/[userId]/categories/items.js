@@ -32,10 +32,13 @@ const ItemsContainer = ({ theItemsData, setSelectedItem, changeSearchPage}) => {
           <Image src={item.image} alt={item.name} width={40} height={40} />
         </article>
         <aside>
-          <p>{item.description}</p>
+          <p>{item.name}</p>
           <p>{item.amount} rwf</p>
-          <p>Dib</p>
-          <p>Wish <i className="fa fa-heart"></i></p>
+          <div>
+            <p className={styles.chat}>Bid</p>
+            <p className={styles.shoppingCart}> Buy <i className="fa fa-shopping-cart"></i></p>
+            <p className={styles.wishlist}>Wish <i className="fa fa-heart"></i></p>
+          </div>
         </aside>
       </div>
     );
