@@ -21,20 +21,19 @@ export const AppPages = [
   { path: '/categories', name: 'Categories', linkText: 'Categories', icon: 'fa fa-list-alt', submenu: categoryPages },
   { path: '/sell', name: 'Sell', linkText: 'Sell', icon: 'fa fa-upload', submenu: purchasePages },
   { path: '/cart', name: 'Cart', linkText: 'Cart', icon: 'fa fa-shopping-cart', submenu: cartPages },
+  { path: '/sellerPages', name: 'My Items', linkText: 'My Items', icon: 'fa fa-user' },
   { path: '/profile', name: 'Profile', linkText: 'My profile', icon: 'fa fa-user' },
 ];
 
 export const SellerPages = AppPages.filter(page =>
   [
-    'Home', 'Categories', 'Sell',
-    'Cart', 'Profile'
+    'Home', 'Sell', 'My Items', 'Profile'
   ].includes(page.name)
 )
 
 export const BuyerPages = AppPages.filter(page =>
   [
-    'Home', 'Categories', 'Sell',
-    'Cart', 'Profile'
+    'Home', 'Categories', 'Cart', 'Profile'
   ].includes(page.name)
 )
 

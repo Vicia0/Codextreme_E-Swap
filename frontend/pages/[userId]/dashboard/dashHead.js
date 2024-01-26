@@ -27,7 +27,7 @@ export const DashHead = ({changeSearchPage}) => {
     <PageHeadLayout>
       <div id={styles.DashHead}>
         <div className={styles.searchHolder}>
-          <input id={styles.searchBar} type="text" placeholder="Q mouse" onClick={()=>changeSearchPage()}/>
+          <input id={styles.searchBar} type="text" placeholder="Q mouse" onClick={()=>changeSearchPage(false)}/>
           <div id={styles.message} /> {/* Corrected the typo here */}
         </div>
         <div className={styles.contentsWrapper} onMouseEnter={changeIndex}>

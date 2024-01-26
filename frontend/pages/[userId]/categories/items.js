@@ -4,7 +4,7 @@ import { setLocalStorageProp_ } from '../../../components/localStorage';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-const ItemsContainer = ({ theItemsData, setSelectedItem }) => {
+const ItemsContainer = ({ theItemsData, setSelectedItem, changeSearchPage}) => {
   const router = useRouter(); 
   const the_items = theItemsData;
   const [searchQuery, setSearchQuery] = useState('');
@@ -44,18 +44,13 @@ const ItemsContainer = ({ theItemsData, setSelectedItem }) => {
     return (
         <div className={styles.containerGrid}>
             <div className={styles.searchAndFilter}>
-                <button
-                className={styles.searchButton}
-                onClick={() => router.push('/search')} 
-                >
-                <i className="fa fa-search" />
-                </button>
-                <button
-                className={styles.filterButton}
-                onClick={() => router.push('/filter')} 
-                >
-                <i className="fa fa-filter" />
-                </button>
+                  <input id={styles.searchBar} type="text" placeholder="Q mouse" onClick={()=>changeSearchPage(false)}/>
+                  <button
+                    className={styles.filterButton}
+                    onClick={() => router.push('/filter')} 
+                    >
+                    <i className="fa fa-filter" />
+                </button>            
             </div>
         {filteredItems.map((item, index) => (
             returnCard(item, index)

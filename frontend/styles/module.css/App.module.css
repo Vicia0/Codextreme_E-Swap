@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  overflow: hidden !important;
 }
 #App .theApp{
   margin: 30px 0px !important;
