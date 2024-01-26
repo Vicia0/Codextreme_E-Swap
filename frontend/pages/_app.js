@@ -21,12 +21,18 @@ function App({ Component, pageProps }) {
   const [userId, setUserID] = useState(null);
   const [appData, setappData] = useState(starting_Components)
   const [missingData, setMissing] = useState(true)
-  const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
-
-  console.log()
+  const authPage = ()=> {
+    const auths= ['Login', 'Signup','Home']
+    auths.map(the_name=>{
+      if(AppPages.find(pag=>pag.name===the_name)  .path === pathname){
+        return true
+      }
+    })
+    AppPages.find((page) => ['Login', 'Signup','/'].some(name => page.name === name))?.path;
+  }  
   useEffect(() => {
     const theUser = getUserFromLocalStorage('logged_ECOSWAP_user');
-    if (!theUser && !authPage) {
+    if (!theUser && !authPage()) {
       router.push('/');
     } else {
       if (!userDetails && theUser) {
@@ -63,7 +69,7 @@ function App({ Component, pageProps }) {
       setCurrentPage={setCurrentPage}
     >
       <section className={styles.content}>
-        {pathname === '' || pathname === '/' || authPage? (
+        {pathname === '' || pathname === '/' || authPage()? (
           <Component
             {...pageProps}
             backendhost={backendhost}
