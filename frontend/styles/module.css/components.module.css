@@ -50,34 +50,46 @@
   font-weight: bold !important;
 }
 
-.pageNav {
-  border: 1px solid grey;
-  margin-top: 5px;
-  border-radius: 5px;
-  width: 140px;
-  float: right;
+.pageNav{
+  margin-top: 9px;
+  width: 100%;
   color: #313131;
+  height: 50px;
 }
-.pageNav article, .pageNav aside {
+.pageNav .left, .pageNav .right  {
+  height: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 70px;
+  float: left;
+  color: #313131;
+  background-color: grey !important;
+}
+.pageNav .left{
+  background-color: aqua;  
+}
+.pageNav .right{
+  float: right;
+  background-color: blue;
+}
+.pageNav .left, .pageNav .right {
   padding: 5px;
 }
-.pageNav article:hover, .pageNav aside:hover {
+.pageNav .left:hover, .pageNav .right:hover {
   color: black;
   cursor: pointer;
 }
-.pageNav article.active, .pageNav aside.active {
+.pageNav .left.active, .pageNav .right.active {
   background-color: var(--button_back);
   color: #0e0e0e;
 }
-.pageNav article {
+.pageNav .left {
   width: 42%;
 }
-.pageNav aside {
+.pageNav .right {
   width: 43%;
   border-left: 1px solid grey !important;
 }
-
-/*# sourceMappingURL=components.module.css.map */
 
 
 .searchPage{
