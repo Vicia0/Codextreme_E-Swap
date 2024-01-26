@@ -5,7 +5,7 @@ import Header from '../components/navigation/Header';
 import styles from '../styles/module.css/App.module.css';
 import Footer from '../components/navigation/footer';
 import { FooterPages } from '../components/navigation/page_links';
-export default function AppLayout({ children, userDetails, setUserDetails, userId, currentPage, setCurrentPage}) {
+export default function AppLayout({ searchCall, children, userDetails, setUserDetails, userId, currentPage, setCurrentPage}) {
   const router = useRouter();
   const {pathname} = useRouter();
   const [authPage, setAuthPage] = useState(false);
@@ -45,7 +45,7 @@ export default function AppLayout({ children, userDetails, setUserDetails, userI
       </Head>
       <section id={styles.App}>
         <div className={styles.theApp}>
-          {!authPage && (
+          {!authPage && !searchCall && (
             userDetails ? ( 
                 <header className={styles.header} >
                   <Header userDetails={userDetails} setUserDetails={setUserDetails} userId={userId}
@@ -54,11 +54,11 @@ export default function AppLayout({ children, userDetails, setUserDetails, userI
                 </header>
             ):<></>
           )}
-          <article className={`${styles.page_wrapper} ${authPage? styles.auth: ''} `} >
+          <article className={`${styles.page_wrapper} ${authPage || searchCall? styles.auth: ''} `} >
             {children}
           </article>
           {
-            !authPage && (
+            !authPage && !searchCall && (
               userDetails ? ( 
                   <header className={styles.header} >
                     <Footer userId={userId} userDetails={userDetails}

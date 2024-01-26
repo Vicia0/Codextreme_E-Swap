@@ -2,10 +2,10 @@
 
 #DashHead {
   position: relative;
-  height: 105px;
+  height: 113px;
   width: 100%;
-  margin-bottom: 6px;
   overflow: hidden;
+  margin-bottom: 6px !important;
 }
 
 #DashHead .searchHolder {
@@ -28,9 +28,10 @@
   color: grey;
   float:left;
   font-size: 10px !important;
+  color: #0e0e0e !important;
+
 }
 
-#DashHead 
 
 #DashHead .contentsWrapper {
   height: 100%;
@@ -43,13 +44,13 @@
   display: none;
 }
 #DashHead .contentsContainer:nth-child(1){
-  background-color: rgb(128, 89, 89);
+  background-color: rgb(90, 136, 90);
 }
 #DashHead .contentsContainer:nth-child(2){
-  background-color: rgb(158, 144, 121);
+  background-color: rgb(253, 218, 218);
 }
 #DashHead .contentsContainer:nth-child(3){
-  background-color: rgb(172, 136, 172);
+  background-color: rgb(255, 238, 207);
 }
 
 #DashHead .contentsContainer.current {

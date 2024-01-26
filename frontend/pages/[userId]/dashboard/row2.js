@@ -18,7 +18,7 @@ const Row2 = ({row2Data}) => {
                     <Image src={dict.image} alt={dict.name} width={40} height={40}/>
                 </article>
                 <aside>
-                    <p>{dict.description}</p>
+                    <p>{dict.name}</p>
                     <p>{dict.amount} rwf</p>
                 </aside>
             </div>
