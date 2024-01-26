@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import '../styles/global.css';
 import AppLayout from './Layout';
-import {getUserFromLocalStorage} from '../components/localStorage';
+import { getUserFromLocalStorage } from '../components/localStorage';
 import { backendhost } from '../components/navigation/routes';
 import { startComponents_ } from '../components/some_components';
 import LoadingPage from './auth/load';
@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
   const { pathname } = useRouter();
   const [userDetails, setUserDetails] = useState(null);
   const [userId, setUserID] = useState(null);
-  const [appData, setappData] = useState(starting_Components)
+  const [appData, setappData] = useState(null)
   const [missingData, setMissing] = useState(true)
   console.log()
   useEffect(() => {
@@ -37,8 +37,8 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (missingData && userId) {
-      //const fetchedData = fetchData()
-      const fetchedData = starting_Components
+      const fetchedData = fetchData()
+      //const fetchedData = starting_Components
       if (fetchedData) {
         setappData(fetchedData);
         setMissing(false);
@@ -46,11 +46,11 @@ function App({ Component, pageProps }) {
         setappData(null);
         setMissing(true);
       }
-    } 
+    }
   }, [missingData, userId]);
 
   const [searchCall, setSearchCall] = useState(false)
-  const changeSearchPage = ()=>{
+  const changeSearchPage = () => {
     setSearchCall(!searchCall)
   }
   return (
@@ -96,7 +96,7 @@ function App({ Component, pageProps }) {
       </section>
     </AppLayout>
   );
-  
+
 }
 
 export default App;
