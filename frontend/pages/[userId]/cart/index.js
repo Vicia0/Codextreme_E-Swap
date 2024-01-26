@@ -11,12 +11,12 @@ const Home = ({ appData , userId}) => {
     const cartItems = appData?.cart.slice(0,2)
     const wishlistItems = appData?.wishlist.slice(0,5)
     const [selectedItem, setSelectedItem] = useState(null)
-    const reduceItems = cartItems.slice(0,3)
+    const reduceItems = cartItems?.slice(0,3)
     return (
         <Layout userId={userId} main_page = 'true' page_name = 'Categories'>
             <div className={`${styles.page} ${styles.index}`}>
                 {
-                    cartItems && cartItems.length > 0?(
+                    cartItems && cartItems?.length > 0?(
                         selectedItem?(
                             <>
                                 <TheItemContainer selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>

@@ -1,28 +1,22 @@
-import axios from 'axios';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/module.css/authenticate.module.css';
 import AuthLayout from './layout';
 import { getUserFromLocalStorage, setLocalStorageProp_ } from '../../components/localStorage';
 import Link from 'next/link';
 import { handlePost } from '../../components/data/handleData';
-const Login = ({ setUserDetails, setLoading, setUserID }) => {
+import { AppPages } from '../../components/navigation/page_links';
+const Login = ({ setUserDetails, setUserID}) => {
   const [correctUser, setCorrectUser] = useState(false)
-
-  useEffect(() => {
-    if (correctUser) {
-      setLoading(true)
-    }
-  }, [correctUser])
-
+  const router = useRouter()
   const [loginError, setLoginError] = useState('');
   const [details, setDetails] = useState({
     email: '', password: ''
   });
   const handleLogin = async () => {
-    console.log('Login handle');
     const try_login = () => {
       setCorrectUser(true)
-      const try_user = { _id: 'buyer--J3344S543435643AD3j', type: 'buyer', email: details.email }
+      const try_user = { _id: 'buyer--J3344S543435643AD3j', type: 'seller', email: details.email }
       setUserDetails(try_user)
       setUserID(try_user._id)
       console.log('login details: ', try_user)
@@ -30,11 +24,12 @@ const Login = ({ setUserDetails, setLoading, setUserID }) => {
       setLoginError('');
       console.log('trial user that is logging: ', getUserFromLocalStorage('logged_ECOSWAP_user'))
     }
-    //try_login()
+    try_login()
+    /*
     try {
       const response = await handlePost('login', details)
-      console.log('response: ', response)
       if (response.status === 200) {
+        setLoginError(null)
         setCorrectUser(true)
         const logged_user = {}
         Object.keys(response).map(key => {
@@ -44,21 +39,18 @@ const Login = ({ setUserDetails, setLoading, setUserID }) => {
             logged_user[key] = response[key]
           }
         })
-        console.log('logged user: ', logged_user)
         setLocalStorageProp_('logged_ECOSWAP_user', logged_user)
         setUserDetails(logged_user)
         setUserID(logged_user._id)
-        setLoginError('');
-        console.log('user that is logging: ', getUserFromLocalStorage('logged_ECOSWAP_user'))
-        setLoginError('Successful Login')
+        router.push('/')
       } else {
         console.log('error to log in, status:', response.status)
       }
     } catch (error) {
       setLoginError('Invalid email or password');
-      console.log('error logging in')
       console.error(error);
     }
+    */
   };
 
   const handleChange = (e) => {
@@ -67,9 +59,10 @@ const Login = ({ setUserDetails, setLoading, setUserID }) => {
   };
 
   return (
-    <AuthLayout >
+    <AuthLayout page='login'>
       <form id={styles.login}>
-        <h4>Login</h4>
+        {loginError && <p className={styles.error}>{loginError}</p>}
+        {correctUser && <p>Successfull log in</p>}
         <input
           placeholder="Enter Email"
           value={details.email}
@@ -92,11 +85,9 @@ const Login = ({ setUserDetails, setLoading, setUserID }) => {
           LOGIN
         </button>
         <div className={styles.theLinks}>
-          <p><span>Create Account</span></p>
+          <p><Link href={AppPages.find(page=>page.name === 'Signup').path}>Create Account</Link></p>
           <p><span>Forgot Password? </span></p>
         </div>
-        {loginError && <p className="error">{loginError}</p>}
-        {correctUser && <p>Successfull log in</p>}
       </form>
     </AuthLayout>
   );

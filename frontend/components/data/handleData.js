@@ -2,10 +2,8 @@ import axios from 'axios';
 import { backendhost } from '../navigation/routes';
 
 const hostRoutes = {
-    'items': 'items',
-    'wishlist': 'wishlist',
-    'cart': 'cart',
-    'users': 'users',
+    'items': 'items', 'wishlists': 'wishlists',
+    'carts': 'carts', 'categories':'categories'
 };
 
 const handleRequest = async (method, endpoint, data = null) => {
@@ -24,7 +22,6 @@ const handleRequest = async (method, endpoint, data = null) => {
 };
 
 // POST request
-
 export const handlePost = (endpoint, postData) => {
     return handleRequest('POST', endpoint, postData);
 };
@@ -41,7 +38,12 @@ export const fetchData = async () => {
     await Promise.all(Object.entries(hostRoutes).map(async ([name, endpoint]) => {
         try {
             const responseData = await handleRequest('GET', endpoint);
-            data[name] = responseData;
+            console.log('endpoint: ', endpoint)
+            if(responseData.status === 200){
+                data[name] = responseData.data;
+            }else{
+                console.log(`Status error fetching data for ${name}: `, responseData.status);
+            }
         } catch (error) {
             // Handle errors if needed
             console.error(`Error fetching data for ${name}:`, error);

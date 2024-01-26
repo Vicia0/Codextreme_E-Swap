@@ -15,12 +15,6 @@ const samples = {
     cart: {
         _id: '', item_id_:'', doneOn: '23/01/2022'
     },
-    purchases:{
-        _id: '', item_id_:'', doneOn: '23/01/2022' 
-    },
-    sold_items: {
-        _id: '', item_id_:'', doneOn: '23/01/2022'
-    },
     users:{
         _id: '', item_id_:'', doneOn: '23/01/2022'
     }

@@ -12,7 +12,7 @@ export const createItem = async (req, res) => {
 
     const itemData = {
       ...req.body,
-      sellerId: req.user.id,
+      sellerId: req.user.id,status:200
     };
 
     const item = await Item.create(itemData);
@@ -26,7 +26,7 @@ export const createItem = async (req, res) => {
 export const getAllItems = async (req, res) => {
   try {
     const items = await Item.findAll();
-    return res.status(200).json(items);
+    return res.status(200).json({data:items, status: 200});
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

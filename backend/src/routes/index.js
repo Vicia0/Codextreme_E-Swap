@@ -19,32 +19,32 @@ router.put("/users/:id", UserController.updateUser);
 router.delete("/users/:id", UserController.deleteUser);
 
 // Item routes
-router.post("/items", isSeller, ItemController.createItem);
+router.post("/items", ItemController.createItem);
 router.get("/items",  ItemController.getAllItems);
 router.get("/items/:id",  ItemController.getItemById);
-router.put("/items/:id", isSeller, ItemController.updateItem);
-router.delete("/items/:id", isSeller, ItemController.deleteItem);
+router.put("/items/:id", ItemController.updateItem);
+router.delete("/items/:id", ItemController.deleteItem);
 
 // Cart routes
-router.post("/carts",isBuyer, CartController.createCart);
-router.get("/carts", isBuyer, CartController.getAllCarts);
-router.get("/carts/:id", isBuyer, CartController.getCartById);
-router.put("/carts/:id", isBuyer, CartController.updateCart);
-router.delete("/carts/:id", isBuyer, CartController.deleteCart);
+router.post("/carts",CartController.createCart);
+router.get("/carts", isBuyer, artController.getAllCarts);
+router.get("/carts/:id", CartController.getCartById);
+router.put("/carts/:id", CartController.updateCart);
+router.delete("/carts/:id", CartController.deleteCart);
 
 // Category routes
-router.post("/categories",isAdmin, CategoryController.createCategory);
-router.get("/categories", isAdmin, CategoryController.getAllCategories);
-router.get("/categories/:id", isAdmin, CategoryController.getCategoryById);
-router.put("/categories/:id", isAdmin, CategoryController.updateCategory);
-router.delete("/categories/:id", isAdmin, CategoryController.deleteCategory);
+router.post("/categories", CategoryController.createCategory);
+router.get("/categories", CategoryController.getAllCategories);
+router.get("/categories/:id", CategoryController.getCategoryById);
+router.put("/categories/:id", CategoryController.updateCategory);
+router.delete("/categories/:id", CategoryController.deleteCategory);
 
 // Wishlist routes
-router.post("/wishlists", isBuyer, WishlistController.createWishlist);
-router.get("/wishlists", isBuyer, WishlistController.getAllWishlists);
-router.get("/wishlists/:id", isBuyer, WishlistController.getWishlistById);
-router.put("/wishlists/:id", isBuyer, WishlistController.updateWishlist);
-router.delete("/wishlists/:id", isBuyer, WishlistController.deleteWishlist);
+router.post("/wishlists", WishlistController.createWishlist);
+router.get("/wishlists", WishlistController.getAllWishlists);
+router.get("/wishlists/:id", WishlistController.getWishlistById);
+router.put("/wishlists/:id", WishlistController.updateWishlist);
+router.delete("/wishlists/:id", WishlistController.deleteWishlist);
 // Auth routes
 router.post("/register", AuthController.signUp);
 router.post("/login", AuthController.login);

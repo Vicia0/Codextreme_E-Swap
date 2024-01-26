@@ -12,7 +12,9 @@
   background-color: whitesmoke !important;
 }
 #authenticate .error {
-  color: orangered;
+  color: rgb(255, 17, 0);
+  font-size: 11px !important;
+  margin: 0 !important;
 }
 #authenticate form {
   padding: 10px 5px;
@@ -33,8 +35,18 @@
   width: 100%;
   height: 100%;
 }
+#authenticate form select, #authenticate form input{
+  background-color: rgba(255, 255, 255, 0.281) !important;
+}
+#authenticate select{
+  margin-top: 20px !important;
+
+}
 #authenticate input {
   margin-top:  20px !important;
+}
+#authenticate input::placeholder{
+  color: black !important;
 }
 #authenticate input:first-child {
   margin-top:  0px !important;

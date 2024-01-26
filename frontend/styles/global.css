@@ -154,6 +154,7 @@ a:focus, a:active, a:hover {
 
 input, select {
   padding: 8px 5px;
+  width: 200px !important;
   margin-top: 2px !important;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -173,9 +174,12 @@ input, select {
 
 }
 select{
-  width: 100%;
 }
 select option{
+  color: black;
+  background-color: rgba(128, 128, 128, 0.349);
+}
+input option{
   color: black;
   background-color: rgba(128, 128, 128, 0.349);
 }

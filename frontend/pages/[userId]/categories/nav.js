@@ -30,7 +30,8 @@ const Nav = ({navData, setCategory, selectedCategory, setSelectedItem}) => {
         <PageHeadLayout>
             <div className={styles.CatHeader}>
                 {
-                    Object.keys(the_items).map(key=>(
+                    the_items &&
+                    Object?.keys(the_items).map(key=>(
                         returnCard(key, the_items[key])
                     ))
                 }

@@ -5,7 +5,7 @@ import { menuPages } from './page_links';
 
 const Header = ({userDetails, setUserDetails, userId, currentPage}) => {
   const router = useRouter()
-  const userType = userDetails?.type
+  const userType = userDetails?.type || 'buyer'
   const sidebar_pages =  menuPages[userType]
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => {
@@ -25,22 +25,23 @@ const Header = ({userDetails, setUserDetails, userId, currentPage}) => {
           <h4>{currentPage}</h4>
         </div>
         <div type='submit' onClick={toggleSidebar} className={styles.toggleSidebar}> 
-          {sidebarOpen?(<i className="fa fa-close"></i>):(<i className='fa fa-bars'></i>)}
+          <i className='fa fa-bars'></i>
         </div>
       </div>
       <ul className={styles.dropdown} style={sidebarOpen ? {} : { display: 'none' }}>
         {userDetails && (
           <>
-              {sidebar_pages?.map((page) => (
-                <li key={page.path} className={styles.submenu} onClick={page.name === 'Logout'? handleLogout: ''}>
-                  <a href={the_link(page.path)} className={styles.left}>
-                    {page.linkText}
-                  </a>
-                  <span className={styles.right}>
-                    <i className={page.icon}></i>
-                  </span>
-                </li>
-              ))}
+          {sidebar_pages.map((page) => (
+            <li key={page.path} className={styles.submenu} onClick={() => page.name === 'Logout' ? handleLogout() : null}>
+              <a href={page.name === 'Logout' ? '' : the_link(page.path)} className={styles.left}>
+                {page.linkText}
+              </a>
+              <span className={styles.right}>
+                <i className={page.icon}></i>
+              </span>
+            </li>
+          ))}
+          
           </>
         )}
       </ul>

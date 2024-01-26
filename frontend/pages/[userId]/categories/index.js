@@ -10,10 +10,10 @@ const Home = ({ appData , userId, changeSearchPage}) => {
     const allItems = appData?.items
     const theCategories = appData?.categories
     const [selectedItem, setSelectedItem] = useState(null)
-    const [selectedCategory,setCategory] = useState(theCategories[0].name)
-    const [categoryItems, setcategoryItems] = useState(allItems.filter(item=> item.category === selectedCategory) || []);
+    const [selectedCategory,setCategory] = useState(theCategories?.[0]?.name)
+    const [categoryItems, setcategoryItems] = useState(allItems?.filter(item=> item?.category === selectedCategory) || []);
     useEffect(() => {
-        const the_items = allItems.filter(item=> item.category === selectedCategory) || []
+        const the_items = allItems?.filter(item=> item?.category === selectedCategory) || []
         setcategoryItems(the_items)
     }, [selectedCategory, allItems]);
     console.log('selectedCategory: ', selectedCategory)
@@ -30,7 +30,7 @@ const Home = ({ appData , userId, changeSearchPage}) => {
             }
             <div className={`${styles.page} ${styles.index}`}>
                 {
-                    categoryItems && categoryItems.length > 0?(
+                    categoryItems && categoryItems?.length > 0?(
                         selectedItem?(
                             <>
                                 <TheItemContainer selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>

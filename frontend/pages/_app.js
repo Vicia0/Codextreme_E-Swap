@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import '../styles/global.css';
 import AppLayout from './Layout';
-import { getUserFromLocalStorage, setLocalStorageProp_ } from '../components/localStorage';
+import { getUserFromLocalStorage } from '../components/localStorage';
 import { backendhost } from '../components/navigation/routes';
 import { startComponents_ } from '../components/some_components';
 import LoadingPage from './auth/load';
@@ -21,12 +21,11 @@ function App({ Component, pageProps }) {
   const [userId, setUserID] = useState(null);
   const [appData, setappData] = useState(starting_Components)
   const [missingData, setMissing] = useState(true)
+  const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
+
   console.log()
   useEffect(() => {
-    setLocalStorageProp_('logged_ECOSWAP_user', null)
-
     const theUser = getUserFromLocalStorage('logged_ECOSWAP_user');
-    const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
     if (!theUser && !authPage) {
       router.push('/');
     } else {
@@ -39,8 +38,8 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (missingData && userId) {
-      const fetchedData = fetchData()
-      //const fetchedData = starting_Components
+      //const fetchedData = fetchData()
+      const fetchedData = starting_Components
       if (fetchedData) {
         setappData(fetchedData);
         setMissing(false);
@@ -64,7 +63,7 @@ function App({ Component, pageProps }) {
       setCurrentPage={setCurrentPage}
     >
       <section className={styles.content}>
-        {pathname === '' || pathname === '/' ? (
+        {pathname === '' || pathname === '/' || authPage? (
           <Component
             {...pageProps}
             backendhost={backendhost}
