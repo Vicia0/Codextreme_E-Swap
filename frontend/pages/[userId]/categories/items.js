@@ -1,46 +1,67 @@
-// theItems.js
 import styles from '../../../styles/module.css/allPages/categories.module.css';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { setLocalStorageProp_ } from '../../../components/localStorage';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-const ItemsContainer = ({theItemsData, setSelectedItem}) => {
-    const the_items = theItemsData
-    const handleselected = (item)=>{
-        setLocalStorageProp_('selecteditem', item)
-        setSelectedItem(item)
-        console.log('clicked')
-        console.log('item:', item)
-    }
-    const returnCard = (item, index) =>{
-        return(
-            <div className={styles.card} key={index} onClick={()=>handleselected(item)}>
-                <article >
-                    <Image src={item.image} alt={item.name} width={40} height={40}/>
-                </article>
-                <aside>
-                    <p>{item.description}</p>
-                    <p>{item.amount} rwf</p>
-                    <p onClick={() => console.log('check item status clicked:', item.checkItem)}>
-                        {item.checkItem ? 'Checked' : 'Check item'}
-                    </p>
-                    <p onClick={() => router.push(`/seller/${item.sellerId}`)}>
-                        Dib
-                    </p>
-                    <p>{} Add Wishlist</p>
-                </aside>
-            </div>
-        )
-    }
+
+const ItemsContainer = ({ theItemsData, setSelectedItem }) => {
+  const router = useRouter(); 
+  const the_items = theItemsData;
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredItems, setFilteredItems] = useState(the_items);
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+    const filtered = the_items.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredItems(filtered);
+  };
+
+  const handleselected = (item) => {
+    setLocalStorageProp_('selecteditem', item);
+    setSelectedItem(item);
+    console.log('clicked');
+    console.log('item:', item);
+  };
+
+  const returnCard = (item, index) => {
+    return (
+      <div className={styles.card} key={index} onClick={() => handleselected(item)}>
+        <article>
+          <Image src={item.image} alt={item.name} width={40} height={40} />
+        </article>
+        <aside>
+          <p>{item.description}</p>
+          <p>{item.amount} rwf</p>
+          <p>Dib</p>
+          <p>Wish <i className="fa fa-heart"></i></p>
+        </aside>
+      </div>
+    );
+  };
+
     return (
         <div className={styles.containerGrid}>
-            {
-                the_items.map((item, index)=>(
-                    returnCard(item, index)
-                ))
-            }
+            <div className={styles.searchAndFilter}>
+                <button
+                className={styles.searchButton}
+                onClick={() => router.push('/search')} 
+                >
+                <i className="fa fa-search" />
+                </button>
+                <button
+                className={styles.filterButton}
+                onClick={() => router.push('/filter')} 
+                >
+                <i className="fa fa-filter" />
+                </button>
+            </div>
+        {filteredItems.map((item, index) => (
+            returnCard(item, index)
+        ))}
         </div>
     );
-};
+    };
 
-export default ItemsContainer;
+    export default ItemsContainer;

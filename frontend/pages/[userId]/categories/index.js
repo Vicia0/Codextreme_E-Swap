@@ -44,13 +44,15 @@ const Home = ({ appData , userId}) => {
                                 <ItemsContainer theItemsData={categoryItems} setSelectedItem={setSelectedItem}
                                     selectedItem={selectedItem}
                                 />
-                                <div className={componentStyles.pageNav}>
-                                    <article>
-                                        Previous
-                                    </article>
-                                    <aside>
-                                        Next
-                                    </aside>
+                                <div>
+                                    <div className={componentStyles.pageNav}>
+                                        <button className={styles.left}>
+                                            Prev
+                                        </button>
+                                        <button className={styles.right}>
+                                            Next
+                                        </button>
+                                    </div>
                                 </div>
                             </>
                         )

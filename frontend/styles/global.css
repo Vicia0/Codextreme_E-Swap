@@ -42,14 +42,19 @@
 }
 
 button {
-  background-color: #161616;
+  background-color: grey;
   color: white;
-  height: 26px;
+  height: 23px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 90px;
-  margin-top: 8px;
+  width: 70px;
+  font-size: 10px !important;
+  margin-right: px;
+}
+button:nth-child(2){
+  background-color: grey !important;
+  margin-left: 40%;
 }
 button:hover {
   opacity: 1;
