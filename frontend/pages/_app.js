@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import '../styles/global.css';
 import AppLayout from './Layout';
-import { getUserFromLocalStorage } from '../components/localStorage';
+import { getUserFromLocalStorage, setLocalStorageProp_ } from '../components/localStorage';
 import { backendhost } from '../components/navigation/routes';
 import { startComponents_ } from '../components/some_components';
 import LoadingPage from './auth/load';
@@ -23,6 +23,8 @@ function App({ Component, pageProps }) {
   const [missingData, setMissing] = useState(true)
   console.log()
   useEffect(() => {
+    setLocalStorageProp_('logged_ECOSWAP_user', null)
+
     const theUser = getUserFromLocalStorage('logged_ECOSWAP_user');
     const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
     if (!theUser && !authPage) {
