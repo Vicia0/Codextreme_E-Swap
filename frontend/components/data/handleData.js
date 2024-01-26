@@ -19,11 +19,12 @@ const handleRequest = async (method, endpoint, data = null) => {
         return response.data;
     } catch (error) {
         console.error(`Error ${method.toLowerCase()}ing data:`, error);
-        throw error; 
+        throw error;
     }
 };
 
 // POST request
+
 export const handlePost = (endpoint, postData) => {
     return handleRequest('POST', endpoint, postData);
 };
