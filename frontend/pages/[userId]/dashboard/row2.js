@@ -4,12 +4,7 @@ import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 
 const Row2 = ({row2Data}) => {
-    const items = {
-        'one': {name:'Home/Appliances', value : row2Data.items, icon: 'fa fa-car'},
-        'two': {name: 'Phones/Tablets', value : row2Data.categories,  icon: 'fa fa-user'},
-        'three': {name: 'Computers/TVs', value : row2Data.purchases, icon: 'fa fa-users'},
-        'four': {name:'All Users', value : row2Data.users, icon: 'fa fa-road'}
-    }    
+
     const the_items = row2Data
     const returnCard = (key, dict) =>{
         return(
@@ -27,6 +22,7 @@ const Row2 = ({row2Data}) => {
     return (
         <div className={styles.row2}>
             {
+                the_items && 
                 Object.keys(the_items).map(key=>(
                     returnCard(key, the_items[key])
                 ))

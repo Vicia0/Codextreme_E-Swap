@@ -21,7 +21,7 @@ function App({ Component, pageProps }) {
   const [userId, setUserID] = useState(null);
   const [appData, setappData] = useState(starting_Components)
   const [missingData, setMissing] = useState(true)
-
+  console.log()
   useEffect(() => {
     const theUser = getUserFromLocalStorage('logged_ECOSWAP_user');
     const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
@@ -37,7 +37,8 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (missingData && userId) {
-      const fetchedData = fetchData();
+      //const fetchedData = fetchData()
+      const fetchedData = starting_Components
       if (fetchedData) {
         setappData(fetchedData);
         setMissing(false);
