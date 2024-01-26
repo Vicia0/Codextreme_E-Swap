@@ -124,11 +124,10 @@
   max-height: 100%;
 }
 .containerGrid .card article{
-  width: 30%;
+  width: 25%;
   max-width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 10px;
+  
 }
 .containerGrid .card aside{
   width: 65%;
@@ -138,17 +137,30 @@
 .containerGrid .card aside p{
   margin: 0 !important;
 }
+.containerGrid .card aside div p{
+  float: left !important;
+  margin-top: 12%!important;
+}
 .containerGrid .card aside p:first-child{
   height: 70%;
-  display: flex;
   align-items: center;
   text-align: left;
   overflow:hidden;
 }
-
+.chat{
+  color: blue;
+  width: 10%!important;
+}
+.shoppingCart{
+  color: blue;
+  width: 20%!important;
+  padding-left: 10%;
+}
 .containerGrid .card aside p:last-child{
+  color: blue;
   height: 30%;
-  font-weight: bold;
+  width: 45px !important;
+  margin-left: 10%!important;
 }
 .containerGrid .card.cart aside div{
   height: 20%;
