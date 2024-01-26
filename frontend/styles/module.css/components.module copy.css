@@ -49,27 +49,14 @@
   cursor: pointer;
   font-weight: bold !important;
 }
-.pageNav{
-  margin-top: 9px;
-  width: 100%;
-  color: #313131;
-  height: 50px;
-}
-.pageNav .left, .pageNav .right  {
-  height: 100%;
+
+.pageNav {
   border: 1px solid grey;
+  margin-top: 5px;
   border-radius: 5px;
-  width: 70px;
-  float: left;
-  color: #313131;
-  background-color: grey !important;
-}
-.pageNav .left{
-  background-color: aqua;  
-}
-.pageNav .right{
+  width: 140px;
   float: right;
-  background-color: blue;
+  color: #313131;
 }
 .pageNav article, .pageNav aside {
   padding: 5px;

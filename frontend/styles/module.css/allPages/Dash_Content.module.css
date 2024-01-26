@@ -9,17 +9,17 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(105, 69, 1, 0.274);
-  background-color: white;
   cursor: pointer;
 }
-.row1 .card:hover, .row2 .card:hover {
+.row2 .card:hover {
   background-color:transparent;
   border: 1px solid gray;
 }
-
+.row1 .card:hover {
+  border: 0.4px solid rgba(128, 128, 128, 0.301);
+}
 .row1 {
-  height:95px;
+  height:90px;
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
@@ -73,8 +73,10 @@
   border-radius: 5px;
   width: 45%;
   float: left;
-  height: 50px !important;
-  padding: 6px 4px;
+  height: 40px !important;
+  padding: 3px 4px;
+  border: 1px solid rgba(105, 69, 1, 0.274);
+  background-color: white;
 }
 .row2 .card:nth-child(even){
   margin-left: 6.5px;
@@ -100,9 +102,10 @@
 }
 .row2 .card aside p{
   margin: 0 !important;
+  height: 30% !important;
 }
 .row2 .card aside p:first-child{
-  height: 70%;
+  margin-top: 10% !important;
   display: flex;
   align-items: center;
   text-align: left;
@@ -110,6 +113,6 @@
 }
 
 .row2 .card aside p:last-child{
-  height: 30%;
   font-weight: bold;
+  margin-top: 3% !important;
 }

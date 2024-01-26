@@ -8,13 +8,12 @@
   height:auto;
   width: 100% !important;  
 }
-#Dashboard #content .a_row{
-  margin-top: 5px;
-}
+
 #Dashboard #content .a_row h2{
   color: black;
   text-align: left;
   margin-left: 4px;
+  margin-top: -10px;
   height: 21px;
 }
 /*# sourceMappingURL=Dashboard.module.css.map */

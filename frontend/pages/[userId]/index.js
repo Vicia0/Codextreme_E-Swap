@@ -5,14 +5,14 @@ import Row1 from './dashboard/row1';
 import Row2 from './dashboard/row2';
 import FacilityLayout from './Layout';
 import { DashHead } from './dashboard/dashHead';
-const Index = ({appData}) => {
+const Index = ({appData, changeSearchPage}) => {
     const row1Data = appData?.categories 
     const row2Data = appData?.items 
     console.log('this is dashboard')
     return (
         <FacilityLayout page_name='Dashboard'>
             <div id={styles.Dashboard}>
-                <DashHead/>
+                <DashHead changeSearchPage={changeSearchPage}/>
                 <div id={styles.content}>
                     <div className={styles.a_row}>
                         <Row1 row1Data={row1Data}/>
