@@ -91,31 +91,3 @@
 }
 
 /*# sourceMappingURL=components.module.css.map */
-
-
-.searchPage{
-height: 90%;
-width: 90%;
-align-items: start !important;
-text-align: left !important;
-}
-.searchPage .head{
-  align-items: start !important;
-text-align: left !important;
-}
-.searchPage .head input{
-  color: #0e0e0e !important;
-  width: 68%;
-}
-.searchPage .head button{
-  width: auto !important;
-  background-color: #31313118;
-  color: var(--header_background) !important;
-  margin-top: 0 !important;
-  margin-left: 4px !important;
-}
-.searchPage .head button:nth-child(1){
-  margin-right: 1px !important;
-  margin-left: 0 !important;
-  background-color: transparent !important;
-}
