@@ -91,6 +91,12 @@
   color: #0e0e0e !important;
 
 }
+.searchAndFilter .filterButton{
+  color: black;
+  width: 10% !important;
+  margin: 0 !important;
+  background-color: #d8d7d7 !important;
+}
 .containerGrid .card.cart {
   height: 60px !important;
 }
