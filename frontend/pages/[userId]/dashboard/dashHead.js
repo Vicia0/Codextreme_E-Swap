@@ -30,7 +30,7 @@ export const DashHead = ({changeSearchPage}) => {
           <input id={styles.searchBar} type="text" placeholder="Q mouse" onClick={() => changeSearchPage(false)} />
           <div id={styles.message} /> 
         </div>
-        <div className={styles.contentsWrapper} onMouseEnter={changeIndex}>
+        <div className={styles.contentsWrapper}>
           {Object.entries(contents).map(([key, content], index) => {
             console.log(key,': ', content.image)
             return(

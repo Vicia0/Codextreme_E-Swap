@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
   const { pathname } = useRouter();
   const [userDetails, setUserDetails] = useState(null);
   const [userId, setUserID] = useState(null);
-  const [appData, setappData] = useState(null)
+  const [appData, setappData] = useState(starting_Components)
   const [missingData, setMissing] = useState(true)
   console.log()
   useEffect(() => {
