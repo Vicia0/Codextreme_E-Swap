@@ -16,8 +16,8 @@ export const purchasePages = [
 
 
 export const AppPages = [
-  { path: '/', name: 'Login', linkText: 'Login', icon: 'fa fa-sign-in-alt' },
-  { path: '/', name: 'Home', linkText: 'Home', icon: 'fa fa-home' },
+  { path: '/auth/login', name: 'Login', linkText: 'Login', icon: 'fa fa-sign-in-alt' },
+  { path: '/auth/signup', name: 'Home', linkText: 'Home', icon: 'fa fa-home' },
   { path: '/categories', name: 'Categories', linkText: 'Categories', icon: 'fa fa-list-alt', submenu: categoryPages },
   { path: '/sell', name: 'Sell', linkText: 'Sell', icon: 'fa fa-upload', submenu: purchasePages },
   { path: '/cart', name: 'Cart', linkText: 'Cart', icon: 'fa fa-shopping-cart', submenu: cartPages },

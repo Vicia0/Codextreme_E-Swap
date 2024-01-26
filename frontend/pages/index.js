@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Login from './authentication/login';
-import LoadingPage from './authentication/load';
+import Login from './auth/login';
+import LoadingPage from './auth/load';
 
 const Index = ({ userDetails, userId, setUserDetails, setUserID }) => {
   const router = useRouter();

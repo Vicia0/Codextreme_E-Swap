@@ -7,8 +7,9 @@ import AppLayout from './Layout';
 import {getUserFromLocalStorage} from '../components/localStorage';
 import { backendhost } from '../components/navigation/routes';
 import { startComponents_ } from '../components/some_components';
-import LoadingPage from './authentication/load';
+import LoadingPage from './auth/load';
 import SearchPage from '../components/pages/search';
+import { fetchData } from '../components/data/handleData';
 
 function App({ Component, pageProps }) {
 
@@ -20,35 +21,32 @@ function App({ Component, pageProps }) {
   const [userId, setUserID] = useState(null);
   const [appData, setappData] = useState(starting_Components)
   const [missingData, setMissing] = useState(true)
-  const missing_data =()=>{
-    if(!appData.items || !appData.categories || !appData.wishlist || !appData.cart||
-      !appData.purchases || !appData.sold_items){
-        return true
-      }
-    else{return false}
-  }
-  const fetchData = ()=>{
-    
-  }
-  useEffect(()=>{
-    if(missingData && userId && userDetails){
-      if(missing_data()){
-        fetchData(); 
-      }else{setMissing(false)}    }
-  },[missingData, userId, userDetails])
 
   useEffect(() => {
-    const the_user = getUserFromLocalStorage('logged_ECOSWAP_user');
-    const loginPage = AppPages.find(page => page.name === 'Login').path;
-    if (!the_user && !pathname.endsWith(loginPage)) {
-      router.push(loginPage)
+    const theUser = getUserFromLocalStorage('logged_ECOSWAP_user');
+    const authPage = AppPages.find((page) => ['Login', 'Signup'].some(name => page.name === name))?.path;
+    if (!theUser && !authPage) {
+      router.push('/');
     } else {
-      if(!userDetails && the_user){
-        setUserDetails(the_user)
-        setUserID(the_user._id)
+      if (!userDetails && theUser) {
+        setUserDetails(theUser);
+        setUserID(theUser._id);
       }
     }
-  },[pathname, userId, userDetails]);
+  }, [pathname, userDetails, router]);
+
+  useEffect(() => {
+    if (missingData && userId) {
+      const fetchedData = fetchData();
+      if (fetchedData) {
+        setappData(fetchedData);
+        setMissing(false);
+      } else {
+        setappData(null);
+        setMissing(true);
+      }
+    } 
+  }, [missingData, userId]);
 
   const [searchCall, setSearchCall] = useState(false)
   const changeSearchPage = ()=>{

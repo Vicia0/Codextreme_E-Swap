@@ -1,9 +1,8 @@
 import axios from 'axios';
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import { useRouter } from 'next/router';
 import { AppPages } from '../../components/navigation/page_links'; 
 import styles from '../../styles/module.css/authenticate.module.css';
-import Link from 'next/link';
 import AuthLayout from './layout';
 const Signup = () => {
   const [signupError, setSignupError] = useState('');

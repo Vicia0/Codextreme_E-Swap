@@ -5,7 +5,7 @@ import { menuPages } from './page_links';
 
 const Header = ({userDetails, setUserDetails, userId, currentPage}) => {
   const router = useRouter()
-  const userType = userDetails?.type || 'buyer'
+  const userType = userDetails?.type
   const sidebar_pages =  menuPages[userType]
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => {
@@ -25,13 +25,13 @@ const Header = ({userDetails, setUserDetails, userId, currentPage}) => {
           <h4>{currentPage}</h4>
         </div>
         <div type='submit' onClick={toggleSidebar} className={styles.toggleSidebar}> 
-          <i className='fa fa-bars'></i>
+          {sidebarOpen?(<i className="fa fa-close"></i>):(<i className='fa fa-bars'></i>)}
         </div>
       </div>
       <ul className={styles.dropdown} style={sidebarOpen ? {} : { display: 'none' }}>
         {userDetails && (
           <>
-              {sidebar_pages.map((page) => (
+              {sidebar_pages?.map((page) => (
                 <li key={page.path} className={styles.submenu} onClick={page.name === 'Logout'? handleLogout: ''}>
                   <a href={the_link(page.path)} className={styles.left}>
                     {page.linkText}

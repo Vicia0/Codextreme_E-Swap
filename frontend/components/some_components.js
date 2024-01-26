@@ -1,3 +1,5 @@
+
+import theImage from '../assets/images/categories/other.jpg';
 const samples = {
     items: {
         name: 'item', image: 'image',amount:'', category: 'category',
@@ -23,7 +25,7 @@ const samples = {
         _id: '', item_id_:'', doneOn: '23/01/2022'
     }
 }
-const the_categories = ['Home Appliances', 'Phones/Tablets', 'Computers/TVs', 'Other']
+const the_categories = ['Home Appliances', 'Phones','Tablets', 'Computers','TVs', 'Audio','Camera', 'Other']
 export const theappData = {
     items: 'nullData', categories: 'nullData', wishlist: 'nullData',
     cart: 'nullData', purchases: 'nullData', sold_items: 'nullData',
@@ -58,7 +60,7 @@ export const startComponents_ =()=>{
                         }
                         the_value__ = the_categories[the_index]
                     }else if(theKey==='image'){
-                        the_value__ = 'http://toppng.com/04953' + count
+                        the_value__ = theImage
                     }else if(theKey==='status'){
                         the_value__ = (count%2 ===0)?'Sold':''
                     }else if(theKey==='_id', theKey==='item_id_'){
