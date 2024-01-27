@@ -26,7 +26,7 @@ const Home = ({ appData , userId}) => {
                         </>
                     ):(
                         <>
-                            <h4 style={{textAlign: 'left', color:'black', backgroundColor:'red'}}>Sold items</h4>
+                            <h4 style={{textAlign: 'left', color:'black'}}>Sold items</h4>
                             {
                                 soldItems && soldItems.length > 0?(
                                     <SoldItems theItemsData={soldItems} setSelectedItem={setSelectedItem}
