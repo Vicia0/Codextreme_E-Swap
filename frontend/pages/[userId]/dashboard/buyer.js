@@ -3,7 +3,7 @@ import styles from '../../../styles/module.css/allPages/Dashboard.module.css';
 import React from 'react';
 import Row1 from './buyer/row1';
 import Row2 from './buyer/row2';
-import { DashHead } from './buyer/dashHead';
+import DashHead from './buyer/dashHead';
 const BuyerDashboard = ({appData, changeSearchPage}) => {
     const row1Data = appData?.categories 
     const row2Data = appData?.items 

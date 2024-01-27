@@ -4,7 +4,7 @@ import PageHeadLayout from '../../../../components/pages/pageHead';
 import styles from '../../../../styles/module.css/allPages/DashHead.module.css';
 import { useRouter } from 'next/router';
 import {AppPages} from '../../../../components/navigation/page_links' ;
-export const DashHead = ({changeSearchPage, userId}) => {
+const DashHead = ({changeSearchPage, userId}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const changeIndex = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Object.keys(contents).length);
@@ -64,3 +64,5 @@ export const DashHead = ({changeSearchPage, userId}) => {
   );
   
 };
+
+export default DashHead

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import PageHeadLayout from '../../../../components/pages/pageHead';
 import styles from '../../../../styles/module.css/allPages/DashHead.module.css';
 
-export const DashHead = ({changeSearchPage}) => {
+const DashHead = ({changeSearchPage}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const changeIndex = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Object.keys(contents).length);
@@ -60,3 +60,5 @@ export const DashHead = ({changeSearchPage}) => {
   );
   
 };
+
+export default DashHead

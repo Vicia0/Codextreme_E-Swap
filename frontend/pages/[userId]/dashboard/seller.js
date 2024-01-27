@@ -1,9 +1,10 @@
 // SellerDashboard.js
 import styles from '../../../styles/module.css/allPages/Dashboard.module.css';
 import React from 'react';
-import { DashHead } from './seller/dashHead';
 import Row1 from './seller/row1';
 import Row2 from './seller/row2';
+import DashHead from './seller/dashHead';
+
 const SellerDashboard = ({appData, changeSearchPage, userId}) => {
     const row1Data = appData?.items?.slice(0,6)
     const row2Data = appData?.items?.slice(0,6)
