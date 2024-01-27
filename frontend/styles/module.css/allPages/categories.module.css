@@ -53,6 +53,16 @@
   width: 100% !important;
   height: 100% !important;
 }
+.itemImg{
+  height: 150px !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+.itemImg img{
+  height: 100% !important;
+  width: 100% !important;
+}
+
 .CatHeader .card .bottom{
   height: 22px;
   display: flex;

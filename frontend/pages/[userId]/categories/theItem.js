@@ -19,14 +19,14 @@ const TheItemContainer = ({ selectedItem, setSelectedItem}) => {
                             <i className='fa fa-ellipsis-v'/>
                         </div>
                     </section>
-                    <section>
+                    <section className={styles.itemImg}>
                         <Image src={selectedItem.image} height={'150px'} width={'260px'} alt={selectedItem.name}/>
                     </section>
                     <div className={styles.details}> 
                         <section className={styles.row1}>
                             <div style={{fontWeight:'bold'}}>{selectedItem.amount} rwf</div>
                             <div style={{textDecoration:'italic', color:'navy'}}>Seller: {selectedItem.seller}</div>
-                            <div style={{textDecoration:'italic', color:'navy'}}>Wishlist</div>
+                            <div style={{textDecoration:'italic', color:'navy'}}>Wish <i className="fa fa-heart"></i> </div>
                         </section>
                         <button>Purchase</button>
                         <div className={styles.row2}>
