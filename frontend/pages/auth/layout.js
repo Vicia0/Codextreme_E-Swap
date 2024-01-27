@@ -5,7 +5,7 @@ import pagestyles from '../../styles/module.css/components.module.css';
 export default function AuthLayout({ children, loader, page}) {
   return (
     <section id={styles.authenticate} className={loader?styles.loader:''}>
-      {!loader && page === 'login' &&(
+      {(!loader && page === 'login') || page === 'land'&&(
         <div className={pagestyles.logoimg}>
           <span className={pagestyles.logo}>
             eco<b className={pagestyles.colored}>SWAP</b>

@@ -1,30 +1,26 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Login from './auth/login';
-import LoadingPage from './auth/load';
+import LandingPage from './auth/landing';
 
 const Index = ({ userDetails, userId, setUserDetails, setUserID }) => {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    console.log('ghvjgfc')
+    console.log('useeffect 1');
     setTimeout(() => {
-      setLoading(false);
-      console.log("the userDetails: ", userDetails)
-      if (userDetails && userDetails != '' && userDetails.type) {
+      console.log("the userDetails: ", userDetails);
+      if (userDetails && userId) {
         router.push(`/${userId}`);
-      } 
-    }, 2000); 
-  }, [userDetails]);
+        console.log('user found');
+      } else {
+        console.log('user not found');
+        router.push('/auth/login').catch(err => console.error('Router push error:', err));
+      }
+    }, 2000);
+  }, [userDetails]);  
 
   return (
     <>
-      {loading ? (
-        <>{LoadingPage()}</>
-      ) : (
-        <Login setLoading={setLoading} setUserDetails={setUserDetails} setUserID={setUserID}/>
-      )}
+      <LandingPage/>
     </>
   );
 };

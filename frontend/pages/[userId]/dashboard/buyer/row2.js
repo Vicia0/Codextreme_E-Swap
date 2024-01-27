@@ -1,5 +1,5 @@
 // Row2.js
-import styles from '../../../styles/module.css/allPages/Dash_Content.module.css';
+import styles from '../../../../styles/module.css/allPages/Dash_Content.module.css';
 import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 

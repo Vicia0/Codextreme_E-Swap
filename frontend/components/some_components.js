@@ -2,7 +2,7 @@
 import theImage from '../assets/images/categories/other.jpg';
 const samples = {
     items: {
-        name: 'item', image: 'image',amount:'', category: 'category',
+        name: 'item', image: theImage,amount:'', category: 'category',
         seller: 'seller', description: 'description',
         status:'', doneOn: '23/01/2022',_id:''
     },
@@ -17,9 +17,9 @@ const samples = {
     },
     users:{
         _id: '', item_id_:'', doneOn: '23/01/2022'
-    }
+    },
 }
-const the_categories = ['Home Appliances', 'Phones','Tablets', 'Computers','TVs', 'Audio','Camera', 'Other']
+const the_categories = ['Home', 'Phones','Tablets', 'Computers','TVs', 'Audio','Camera', 'Other']
 export const theappData = {
     items: 'nullData', categories: 'nullData', wishlist: 'nullData',
     cart: 'nullData', purchases: 'nullData', sold_items: 'nullData',
@@ -38,7 +38,7 @@ export const startComponents_ =()=>{
                 the_items.push(item_)
             })
         }else{
-            for (let count=0; count<= 10; count++){
+            for (let count=0; count<= 40; count++){
                 const item_ = {}
                 Object.entries(values).map(([theKey, value])=>{
                     let the_value__ 
@@ -56,7 +56,17 @@ export const startComponents_ =()=>{
                     }else if(theKey==='image'){
                         the_value__ = theImage
                     }else if(theKey==='status'){
-                        the_value__ = (count%2 ===0)?'Sold':''
+                        the_value__ = (count%2 ===0 && count%4===0)?'sold':(count%3 ===0 && count%6===0)?'requested':'In Stock'
+                        let buyer; let interrested_buyer
+                        if(the_value__ ==='sold'){
+                            buyer='buyer' + count
+                            interrested_buyer=''
+                        }else if(the_value__ ==='requested'){
+                            interrested_buyer='interrested_buyer' + count
+                            buyer=''
+                        }else{buyer =''}
+                        item_['buyer'] = buyer
+                        item_['interrested_buyer'] = interrested_buyer
                     }else if(theKey==='_id', theKey==='item_id_'){
                         the_value__ = 'LS' + ((count+12) *304) + 'fgm' +((count+9) *694)  + 'TN'
                     }else if(theKey === 'doneOn' || theKey === 'date'){

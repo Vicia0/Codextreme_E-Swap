@@ -23,6 +23,7 @@ const Login = ({ setUserDetails, setUserID}) => {
       localStorage.setItem('logged_ECOSWAP_user', JSON.stringify(try_user));
       setLoginError('');
       console.log('trial user that is logging: ', getUserFromLocalStorage('logged_ECOSWAP_user'))
+      router.push('/')
     }
     try_login()
     /*

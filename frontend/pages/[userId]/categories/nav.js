@@ -3,7 +3,18 @@ import styles from '../../../styles/module.css/allPages/categories.module.css';
 import React from 'react';
 import Image from 'next/image';
 import PageHeadLayout from '../../../components/pages/pageHead';
+import Image from 'next/image';
+import HomeImage from '../../../../assets/images/categories/home.png';
+import PhonesImage from '../../../../assets/images/categories/phones.png';
+import DesktopImage from '../../../../assets/images/categories/desktop.png';
+import OtherImage from '../../../../assets/images/categories/other.jpg';
 const Nav = ({navData, setCategory, selectedCategory, setSelectedItem}) => {
+
+    const category_images = {
+        'Home': HomeImage,
+        'phones': PhonesImage,
+        'desktop': DesktopImage,
+    }    
     const the_items = navData
     const handleNav = (theCategory)=>{
         setCategory(theCategory)
@@ -18,7 +29,7 @@ const Nav = ({navData, setCategory, selectedCategory, setSelectedItem}) => {
                 }}
             >
                 <div className={styles.top}>
-                    <Image src={dict.image} alt={dict.name} width={40} height={40}/>
+                    <Image src={category_images[dict.name] ? category_images[dict.name] : OtherImage} alt={dict.name} width={40} height={40}/>
                 </div>
                 <div className={styles.bottom}>
                     <p>{dict.name}</p>

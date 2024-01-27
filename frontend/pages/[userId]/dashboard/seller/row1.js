@@ -1,11 +1,11 @@
 // Row1.js
-import styles from '../../../styles/module.css/allPages/Dash_Content.module.css';
+import styles from '../../../../styles/module.css/allPages/Dash_Content.module.css';
 import React from 'react';
 import Image from 'next/image';
-import HomeImage from '../../../assets/images/categories/home.png';
-import PhonesImage from '../../../assets/images/categories/phones.png';
-import DesktopImage from '../../../assets/images/categories/desktop.png';
-import OtherImage from '../../../assets/images/categories/other.jpg';
+import HomeImage from '../../../../assets/images/categories/home.png';
+import PhonesImage from '../../../../assets/images/categories/phones.png';
+import DesktopImage from '../../../../assets/images/categories/desktop.png';
+import OtherImage from '../../../../assets/images/categories/other.jpg';
 const Row1 = ({row1Data}) => {
     const the_items = row1Data
     const category_images = {

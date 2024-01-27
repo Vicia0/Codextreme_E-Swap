@@ -1,7 +1,7 @@
 // DashHead component
 import { useState, useEffect } from 'react';
-import PageHeadLayout from '../../../components/pages/pageHead';
-import styles from '../../../styles/module.css/allPages/DashHead.module.css';
+import PageHeadLayout from '../../../../components/pages/pageHead';
+import styles from '../../../../styles/module.css/allPages/DashHead.module.css';
 
 export const DashHead = ({changeSearchPage}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +32,7 @@ export const DashHead = ({changeSearchPage}) => {
         </div>
         <div className={styles.contentsWrapper}>
           {Object.entries(contents).map(([key, content], index) => {
-            console.log(key,': ', content.image)
+            //console.log(key,': ', content.image)
             return(
               <div key={key}
                 className={`${styles.contentsContainer} ${index === currentIndex ? styles.current : ''}`}

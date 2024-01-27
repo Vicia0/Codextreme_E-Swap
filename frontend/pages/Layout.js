@@ -11,7 +11,7 @@ export default function AppLayout({ searchCall, children, userDetails, setUserDe
   const [authPage, setAuthPage] = useState(false);
 
   useEffect(() => {
-    setAuthPage(pathname === '/');
+    setAuthPage(pathname === '/'||pathname===''||pathname.endsWith('login')||pathname.endsWith('signup'));
   }, [pathname]);
 
   useEffect(() => {
