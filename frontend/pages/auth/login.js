@@ -16,7 +16,13 @@ const Login = ({ setUserDetails, setUserID}) => {
   const handleLogin = async () => {
     const try_login = () => {
       setCorrectUser(true)
-      const try_user = { _id: 'buyer--J3344S543435643AD3j', type: 'buyer', email: details.email }
+      let the_type
+      if(details.email.startsWith('seller')){
+        the_type = 'seller'
+      }else{
+        the_type = 'buyer'
+      }
+      const try_user = { _id: `${the_type}2`, type: the_type, email: details.email }
       setUserDetails(try_user)
       setUserID(try_user._id)
       console.log('login details: ', try_user)

@@ -14,7 +14,6 @@ const Header = ({userDetails, setUserDetails, userId, currentPage}) => {
   const handleLogout = () =>{
     localStorage.setItem('logged_ECOSWAP_user', JSON.stringify(null));
     setUserDetails(null)
-    router.push('/')
   }
   const the_link = (link) => `/${userId}/${link}`
 

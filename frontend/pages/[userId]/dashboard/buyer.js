@@ -16,7 +16,7 @@ const BuyerDashboard = ({appData, changeSearchPage}) => {
                     <Row1 row1Data={row1Data}/>
                 </div>
                 <div className={styles.a_row}>
-                    <h2>Mew items</h2>
+                    <h2>Recently Added Items</h2>
                     <Row2 row2Data ={row2Data}/>
                 </div>
             </div>

@@ -12,15 +12,15 @@ export const DashHead = ({changeSearchPage}) => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeIndex();
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   const contents = {
-    newly_added: { heading: 'Newly Added', subheading: 'Check items >>' },
-    most_bought_category: { heading: 'Most Bought Category', subheading: 'Check items >>'},
-    eco_swap_choosing: { heading: 'Eco Swap Choosing', subheading: 'Check items >>'},
+    most_bought_category: { heading: 'Transform E-Waste into Tech Treasures', subheading: 'Start Crafting >>'},
+    newly_added: { heading: 'Make a Difference: Buy Second-Hand, Combat E-Waste', subheading: 'Check items >>' },
+    eco_swap_choosing: { heading: 'Green Crafting: Transform E-Waste into Your Next Tech', subheading: 'Check items >>'},
   };
   
   return (

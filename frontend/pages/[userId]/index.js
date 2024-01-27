@@ -5,11 +5,11 @@ import FacilityLayout from './Layout';
 import BuyerDashboard from './dashboard/buyer';
 import SellerDashboard from './dashboard/seller';
 
-const Index = ({ appData, changeSearchPage, userDetails }) => {
+const Index = ({ appData, changeSearchPage, userDetails, userId}) => {
     const userType = userDetails?.type;
     const dashcontent = {
-        buyer: <BuyerDashboard changeSearchPage={changeSearchPage} appData={appData} />,
-        seller: <SellerDashboard changeSearchPage={changeSearchPage} appData={appData} />,
+        buyer: <BuyerDashboard changeSearchPage={changeSearchPage} appData={appData} userId={userId}/>,
+        seller: <SellerDashboard changeSearchPage={changeSearchPage} appData={appData} userId={userId}/>,
     };
     
     console.log('this is dashboard');

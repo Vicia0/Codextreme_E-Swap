@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import PageHeadLayout from '../../../../components/pages/pageHead';
 import styles from '../../../../styles/module.css/allPages/DashHead.module.css';
-
-export const DashHead = ({changeSearchPage}) => {
+import { useRouter } from 'next/router';
+import {AppPages} from '../../../../components/navigation/page_links' ;
+export const DashHead = ({changeSearchPage, userId}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const changeIndex = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Object.keys(contents).length);
@@ -12,17 +13,19 @@ export const DashHead = ({changeSearchPage}) => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeIndex();
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   const contents = {
-    newly_added: { heading: 'Newly Added', subheading: 'Check items >>' },
-    most_bought_category: { heading: 'Most Bought Category', subheading: 'Check items >>'},
-    eco_swap_choosing: { heading: 'Eco Swap Choosing', subheading: 'Check items >>'},
+    newly_added: { heading: 'Join the E-Waste Revolution', subheading: 'Start Selling >>' },
+    most_bought_category :{ heading: 'Contribute to a Greener Rwanda and earn Rewards', subheading: 'Get Started >>'},
   };
-  
+  const router = useRouter()
+  const go_sell = ()=>{
+    router.push(`${userId}/${AppPages.find(page=>page.name === 'My Items').push}`)
+  }
   return (
     <PageHeadLayout>
       <div id={styles.DashHead}>
@@ -36,8 +39,9 @@ export const DashHead = ({changeSearchPage}) => {
             return(
               <div key={key}
                 className={`${styles.contentsContainer} ${index === currentIndex ? styles.current : ''}`}
+                onClick={()=>go_sell()}
               >
-                <div className={styles.content}>
+                <div className={styles.content} style={{top:'-10 !important', marginTop: '-10 !important'}}>
                   <h2>{content.heading}</h2>
                   <p>{content.subheading}</p>
                 </div>

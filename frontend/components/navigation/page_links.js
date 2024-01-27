@@ -22,7 +22,7 @@ export const AppPages = [
   { path: '/categories', name: 'Categories', linkText: 'Categories', icon: 'fa fa-list-alt', submenu: categoryPages },
   { path: '/sell', name: 'Sell', linkText: 'Sell', icon: 'fa fa-upload', submenu: purchasePages },
   { path: '/cart', name: 'Cart', linkText: 'Cart', icon: 'fa fa-shopping-cart', submenu: cartPages },
-  { path: '/sellerItems', name: 'My Items', linkText: 'My Items', icon: 'fa fa-user' },
+  { path: '/sellerItems', name: 'My Items', linkText: 'My Items', icon: "fa fa-shopping-cart"},
   { path: '/profile', name: 'Profile', linkText: 'My profile', icon: 'fa fa-user' },
 ];
 

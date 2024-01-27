@@ -25,8 +25,8 @@ const SoldItems = ({theItemsData, setSelectedItem, allItems}) => {
               <p>{the_item.name}</p>
               <p>{the_item.amount} rwf</p>
               <div>
-                <p className={styles.chat}>Bid</p>
-                <p className={styles.shoppingCart}> Buy <i className="fa fa-shopping-cart"></i></p>
+                <p className={styles.chat}>Relist</p>
+                <p className={styles.shoppingCart}></p>
                 <p className={styles.wishlist}>Remove </p>
               </div>
             </aside>

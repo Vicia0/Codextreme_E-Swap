@@ -60,14 +60,14 @@
 #DashHead .contentsContainer:nth-child(1){
   background-image: url('../../../assets/images/dash/newly.jpg');
 }
-
 #DashHead .contentsContainer:nth-child(2){
-  background-image: url('../../../assets/images/dash/most.jpg');
+  background-image: url('../../../assets/images/dash/choosing.jpg');
 }
 
 #DashHead .contentsContainer:nth-child(3){
-  background-image: url('../../../assets/images/dash/choosing.jpg');
+  background-image: url('../../../assets/images/dash/most.jpg');
 }
+
 
 
 #DashHead .contentsContainer.current {
@@ -78,7 +78,7 @@
   float: left;
   width: 50; 
   margin: 20px !important;
-  top:  30px !important;
+  top:  25px !important;
   text-align: left !important;
   position: absolute;
   z-index: 1;

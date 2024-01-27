@@ -16,7 +16,7 @@ const Index = ({ userDetails, userId, setUserDetails, setUserID }) => {
         router.push('/auth/login').catch(err => console.error('Router push error:', err));
       }
     }, 2000);
-  }, [userDetails]);  
+  }, [userDetails,userId, router]);  
 
   return (
     <>
