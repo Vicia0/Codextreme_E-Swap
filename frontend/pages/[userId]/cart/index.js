@@ -27,7 +27,7 @@ const Home = ({ appData , userId}) => {
                             </>
                         ):(
                             <>
-                                <h4 style={{textAlign: 'left', color:'black', backgroundColor:'red'}}>Cart</h4>
+                                <h4 style={{textAlign: 'left', color:'black'}}>Cart</h4>
                                 {
                                     cartItems && cartItems.length > 0?(
                                         <Cart theItemsData={cartItems} setSelectedItem={setSelectedItem}

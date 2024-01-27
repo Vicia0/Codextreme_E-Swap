@@ -16,7 +16,7 @@ const Login = ({ setUserDetails, setUserID}) => {
   const handleLogin = async () => {
     const try_login = () => {
       setCorrectUser(true)
-      const try_user = { _id: 'buyer--J3344S543435643AD3j', type: 'seller', email: details.email }
+      const try_user = { _id: 'buyer--J3344S543435643AD3j', type: 'buyer', email: details.email }
       setUserDetails(try_user)
       setUserID(try_user._id)
       console.log('login details: ', try_user)

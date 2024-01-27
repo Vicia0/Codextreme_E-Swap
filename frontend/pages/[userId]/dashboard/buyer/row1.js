@@ -17,14 +17,14 @@ const Row1 = ({row1Data}) => {
     const returnImage = (name)=>{
         console.log(name, ', the image: ', category_images[name])
         return(
-            <Image src={category_images[dict.name] ? category_images[dict.name] : OtherImage} alt={dict.name} width={40} height={40}/>
+            <Image src={category_images?.[name] ? category_images?.[name] : OtherImage} alt={name} width={40} height={40}/>
         )
     }
     const returnCard = (key, dict) =>{
         return(
             <div className={styles.card} key={key}>
                 <div className={styles.top}>
-                    {returnImage()}
+                    {returnImage(dict.name)}
                 </div>
                 <div className={styles.bottom}>
                     <p>{dict.name}</p>

@@ -10,10 +10,10 @@ const samples = {
         name: 'category', _id: '', doneOn: '23/01/2022'
     },
     wishlist: {
-        _id: '', item_id_:'', doneOn: '23/01/2022'
+        _id: '', item_id_:'', doneOn: '23/01/2022', image:''
     },
     cart: {
-        _id: '', item_id_:'', doneOn: '23/01/2022'
+        _id: '', item_id_:'', doneOn: '23/01/2022', image: ''
     },
     users:{
         _id: '', item_id_:'', doneOn: '23/01/2022'
