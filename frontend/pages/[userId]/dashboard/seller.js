@@ -12,7 +12,7 @@ const SellerDashboard = ({appData, changeSearchPage, userId}) => {
     return (
         <>
             <DashHead changeSearchPage={changeSearchPage} userId={userId}/>
-            <div id={styles.content} className={styles.seller}>
+                <div id={styles.content} className={styles.seller}>
                 <div className={styles.a_row} style={{marginTop:'10px !important'}}>
                     <div className={styles.head}>
                     <article style={{width:'50%'}}><h2>User Requests</h2></article>
