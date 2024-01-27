@@ -14,6 +14,7 @@ const Login = ({ setUserDetails, setUserID}) => {
     email: '', password: ''
   });
   const handleLogin = async () => {
+    /*
     const try_login = () => {
       setCorrectUser(true)
       let the_type
@@ -32,7 +33,7 @@ const Login = ({ setUserDetails, setUserID}) => {
       router.push('/')
     }
     try_login()
-    /*
+    */
     try {
       const response = await handlePost('login', details)
       if (response.status === 200) {
@@ -57,7 +58,6 @@ const Login = ({ setUserDetails, setUserID}) => {
       setLoginError('Invalid email or password');
       console.error(error);
     }
-    */
   };
 
   const handleChange = (e) => {
