@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/module.css/authenticate.module.css';
 import AuthLayout from './layout';
-import { getUserFromLocalStorage, setLocalStorageProp_ } from '../../components/localStorage';
+import { getUserFromLocalStorage } from '../../components/localStorage';
 import Link from 'next/link';
 import { handlePost } from '../../components/data/handleData';
 import { AppPages } from '../../components/navigation/page_links';
@@ -14,7 +14,6 @@ const Login = ({ setUserDetails, setUserID}) => {
     email: '', password: ''
   });
   const handleLogin = async () => {
-    /*
     const try_login = () => {
       setCorrectUser(true)
       let the_type
@@ -33,7 +32,7 @@ const Login = ({ setUserDetails, setUserID}) => {
       router.push('/')
     }
     try_login()
-    */
+    /*
     try {
       const response = await handlePost('login', details)
       if (response.status === 200) {
@@ -58,6 +57,7 @@ const Login = ({ setUserDetails, setUserID}) => {
       setLoginError('Invalid email or password');
       console.error(error);
     }
+    */
   };
 
   const handleChange = (e) => {
